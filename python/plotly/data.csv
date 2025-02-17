@@ -1,0 +1,6 @@
+0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3
+name,x,y,color,name,x,y,color,name,x,y,color,name,x,y,color
+a,1,1,red,a,2,2,red,a,4,4,red,a,4,4,red
+b,2,2,blue,b,1,1,blue,b,3,3,blue,b,3,3,blue
+c,3,3,green,c,3,3,green,c,1,1,green,d,1,0.8,green
+d,4,4,black,d,4,4,black,d,2,0.8,black,c,-1,1,black

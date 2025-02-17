@@ -1,0 +1,89 @@
+{
+    // List of Keyboard Shortcuts
+    "shortcuts": [
+
+        // ####################################################################
+        // #################### My Modifications ##############################
+        // ####################################################################
+
+
+
+        // # Hiding code and output cells #####################################
+        // ####################################################################
+        {
+            "command": "notebook:hide-cell-code",
+            "keys": [
+                "Accel J"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:show-cell-code",
+            "keys": [
+                "Accel Shift J"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+
+        // # TEMP -------------------------------------------------------------
+        {
+            "command": "notebook:hide-cell-outputs",
+            "keys": [
+                "Accel H"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:show-cell-outputs",
+            "keys": [
+                "Accel Shift H"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+
+
+
+        // # Restart and run all cells ########################################
+        // ####################################################################
+        {
+            "command": "runmenu:restart-and-run-all",
+            "keys": [
+                "Ctrl Shift Enter"
+            ],
+            "selector": "[data-jp-code-runner]"
+        },
+
+        // # Searching ########################################################
+        // ####################################################################
+        {
+            "command": "documentsearch:start",
+            "keys": [
+                "Ctrl Shift F"
+            ],
+            "selector": ".jp-mod-searchable"
+            // "disabled": true
+        },
+
+        {
+            "command": "documentsearch:start",
+            "keys": [
+                "Accel F"
+            ],
+            "selector": ".jp-mod-searchable",
+            "disabled": true
+        },
+
+        // # Activate command palette #########################################
+        // ####################################################################
+        {
+            "command": "apputils:activate-command-palette",
+            "keys": [
+                "Accel Shift P"
+            ],
+            "selector": "body"
+        }
+
+
+
+    ]
+}

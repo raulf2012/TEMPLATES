@@ -1,0 +1,29 @@
+[global_config]
+[keybindings]
+  cycle_next = <Ctrl>Page_Down
+  cycle_prev = <Ctrl>Page_Up
+  next_tab = <Ctrl>Tab
+  prev_tab = <Ctrl><Shift>Tab
+  split_horiz = <Primary><Shift>j
+  split_vert = <Primary><Shift>l
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#1c1c1c"
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = monofur for Powerline 17
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

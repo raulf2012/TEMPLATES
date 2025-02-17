@@ -1,0 +1,124 @@
+
+" " From Kite installation docs:
+" " https://help.kite.com/article/73-using-the-vim-plugin
+" set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+" set laststatus=2  " always display the status line
+
+" | - Kite
+" set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+" set laststatus=2
+" __|
+
+
+" How do I disable the 'Press ENTER or type command to continue' prompt in Vim?
+" set dir=$TEMP
+
+
+" Don't wrap lines by default
+" set nowrap
+" set wrap
+
+
+" #############################################################################
+" set colorcolumn=80
+" set cursorline
+" set cursorcolumn
+
+" highlight ColorColumn ctermbg=7
+
+" setlocal colorcolumn=80
+" highlight ColorColumn guibg=#222222
+" highlight ColorColumn ctermbg=8
+
+
+
+"| - Fold method #############################################################
+" https://stackoverflow.com/questions/5969909/two-fold-methods-at-the-same-time
+" let b:inBlock=0
+" let b:lastLineNum=0
+" let b:lastLevel=0
+" let b:lastGoodLine=0
+" let b:lastGoodBlock=0
+" let b:startFoldingMark='^\s*.\?#<==*\|^\s*.\?#region'
+" let b:endFoldingMark='^\s*.\?#=*=>\|^\s*.\?#endregion'
+" function! MyFold(linenum)
+"     let linetext = getline(a:linenum)
+"     let level     = indent(a:linenum)   / &shiftwidth
+"     "the first line have 0 fold level
+"     if (a:linenum == 1)
+"         if linetext =~ b:startFoldingMark
+"             let b:inBlock = 1
+"             let b:lastLineNum=a:linenum
+"             let b:lastGoodLine=0
+"             let b:lastGoodBlock=0
+"             let b:lastLevel=level
+"             return level
+"         endif
+"         let b:inBlock=0
+"         let b:lastInBlock=0
+"         let b:lastLineNum=a:linenum
+"         let b:lastGoodLine=0
+"         let b:lastGoodBlock=b:inBlock
+"         let b:lastLevel=level + b:inBlock
+"         return level + b:inBlock
+"     endif
+"
+"     " not calculate from the mid of text
+"     if ((b:lastLineNum+1) != a:linenum)
+"         let level     = indent(a:linenum)   / &shiftwidth
+"         let lastGoodNum = a:linenum-1
+"         while (lastGoodNum>1 && getline(lastGoodNum) =~? '\v^\s*$' )
+"             let lastGoodNum -= 1
+"         endwhile
+"         if  (foldlevel(lastGoodNum)==-1)
+"             let b:inBlock=b:lastGoodBlock
+"         else
+"             let lastlevel = indent(lastGoodNum)   / &shiftwidth
+"             let lastlinetext = getline(lastGoodNum)
+"             let lastlinelevel = foldlevel(lastGoodNum)
+"             if lastlinetext =~ b:startFoldingMark
+"                 let b:inBlock = lastlinelevel - lastlevel + 1
+"             elseif lastlinetext =~ b:endFoldingMark
+"                 let b:inBlock = lastlinelevel - lastlevel - 1
+"             else
+"                 let b:inBlock = lastlinelevel - lastlevel
+"             endif
+"         endif
+"     endif
+"
+"     "blank lines have undefined fold level
+"     if getline(a:linenum) =~? '\v^\s*$'
+"         let b:lastLineNum=a:linenum
+"         let b:lastLevel=-1
+"         return -1
+"     endif
+"
+"     "if next line is a start of new marker block, inBlock ++
+"     if linetext =~ b:startFoldingMark
+"         let b:lastLineNum=a:linenum
+"         if (b:lastLevel != -1)
+"             let b:lastGoodLine=a:linenum
+"             let b:lastGoodBlock=b:inBlock
+"         endif
+"         let b:lastLevel=level + b:inBlock - 1
+"         return level + b:inBlock - 1
+"     "if next line is an end of new marker block, inBlock -
+"     elseif linetext =~ b:endFoldingMark
+"         let b:inBlock = b:inBlock - 1
+"         let b:lastLineNum=a:linenum
+"         let b:lastGoodLine=a:linenum
+"         let b:lastGoodBlock=b:inBlock
+"         let b:lastLevel=level + b:inBlock + 1
+"         return level + b:inBlock + 1
+"     endif
+"
+"     let b:lastLineNum=a:linenum
+"     if (b:lastLevel != -1)
+"         let b:lastGoodLine=a:linenum
+"         let b:lastGoodBlock=b:inBlock
+"     endif
+"     let b:lastLevel=level + b:inBlock
+"     return level+b:inBlock
+" endfunction
+"__| #########################################################################
+
